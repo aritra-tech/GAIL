@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    tools:context=".authentication.SignUpFinal">
+
+    <TextView
+        android:layout_width="336dp"
+        android:layout_height="35dp"
+        android:text="Please enter your details"
+        android:textColor="@color/desat_blue"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/eemail"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stroked"
+        android:gravity="center_vertical"
+        android:hint="Enter your email"
+        android:paddingLeft="23dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="55dp"
+        android:layout_margin="7dp"/>
+
+    <EditText
+        android:id="@+id/ephone_no"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stroked"
+        android:gravity="center_vertical"
+        android:hint="Phone number"
+        android:inputType="numberDecimal"
+        android:paddingLeft="23dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="105dp"
+        android:layout_margin="7dp"/>
+
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/stroked">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:text="Gender"
+            android:textColor="@color/desat_blue" />
+
+        <Spinner
+            android:id="@+id/gender_spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="7dp" />
+
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edesignation"
+        android:layout_width="331dp"
+        android:layout_height="111dp"
+        android:layout_margin="7dp"
+        android:background="@drawable/stroked"
+        android:gravity="center|top|left"
+        android:hint="Designation"
+        android:paddingLeft="23dp"
+        android:paddingTop="20dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <EditText
+        android:id="@+id/eoffice_add"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stroked"
+        android:gravity="center_vertical"
+        android:hint="Office Address"
+        android:paddingLeft="23dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="105dp"
+        android:layout_margin="7dp"/>
+
+    <EditText
+        android:id="@+id/epasword"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stroked"
+        android:gravity="center_vertical"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="23dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="105dp"
+        android:layout_margin="7dp"/>
+
+    <EditText
+        android:id="@+id/econfirm_password"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:background="@drawable/stroked"
+        android:gravity="center_vertical"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingLeft="23dp"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="@color/desat_blue"
+        android:textColorHint="#5F729E"
+        android:textSize="15dp"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="105dp"
+        android:layout_margin="7dp"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/positive"
+        android:text="Create Account"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+</LinearLayout>
