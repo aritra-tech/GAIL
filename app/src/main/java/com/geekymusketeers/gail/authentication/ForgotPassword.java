@@ -27,7 +27,7 @@ public class ForgotPassword extends AppCompatActivity {
         email = findViewById(R.id.reset_email);
         resetpass = findViewById(R.id.reset_pass);
 
-        resetpass.setOnClickListener(view -> {
+        resetpass.setOnClickListener(view -> { //forgetpass code starts here
             String Email = email.getText().toString().trim();
             if (Email.isEmpty()) {
                 email.setError("Field can't be empty");
