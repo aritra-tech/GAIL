@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GAIL">
         <activity
+            android:name=".authentication.ForgotPassword"
+            android:exported="false" />
+        <activity
             android:name=".authentication.SignUpFinal"
             android:exported="false" />
         <activity
