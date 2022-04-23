@@ -128,6 +128,7 @@
         android:layout_marginBottom="0dp"
         android:gravity="center"
         android:text="Login"
+        android:textSize="16dp"
         android:textColor="@color/desat_blue"
         android:textStyle="bold" />
 
@@ -143,7 +144,8 @@
         android:layout_marginBottom="0dp"
         android:gravity="center"
         android:text="Already have an account?"
-        android:textColor="@color/desat_blue" />
+        android:textColor="@color/desat_blue"
+        android:textSize="16dp" />
 
   </RelativeLayout>
 

@@ -15,6 +15,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.geekymusketeers.gail.R;
@@ -33,6 +34,7 @@ public class SignUpFinal extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private Button create;
     EditText email, pass, confPass, designation, officeAdd, contact;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +42,6 @@ public class SignUpFinal extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_final);
 
         initialization();
-        mAuth = FirebaseAuth.getInstance();
-        create = findViewById(R.id.create);
-        email = findViewById(R.id.email);
-        pass = findViewById(R.id.pass);
-        confPass = findViewById(R.id.conf_pass);
-        designation = findViewById(R.id.designation);
-        officeAdd = findViewById(R.id.office_add);
-        contact = findViewById(R.id.contact);
 
 
         Intent intent = getIntent();
@@ -72,7 +66,7 @@ public class SignUpFinal extends AppCompatActivity {
                 validate(sEmail, sPass, sCPass, sDes, sOAdd);
 
               //  Toast.makeText(SignUpFinal.this, Base64, Toast.LENGTH_SHORT).show();
-
+                progressBar.setVisibility(View.VISIBLE);
                 mAuth.createUserWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
                         .addOnCompleteListener(SignUpFinal.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -93,17 +87,20 @@ public class SignUpFinal extends AppCompatActivity {
                                                 startActivity(new Intent(SignUpFinal.this, SignInScreen.class));
                                                 // updateUI(user);
                                                 Toast.makeText(SignUpFinal.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                                progressBar.setVisibility(View.GONE);
                                             } else {
                                                 // If sign in fails, display a message to the user.
                                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
                                                 Toast.makeText(SignUpFinal.this, "User data failed.", Toast.LENGTH_SHORT).show();
+                                                progressBar.setVisibility(View.GONE);
                                             }
                                         }
                                     });
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(SignUpFinal.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpFinal.this, "Authentication failed"+task.getException(), Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.GONE);
                                   //  updateUI(null);
                                 }
                             }
@@ -163,6 +160,7 @@ public class SignUpFinal extends AppCompatActivity {
         designation = findViewById(R.id.designation);
         officeAdd = findViewById(R.id.office_add);
         contact = findViewById(R.id.contact);
+        progressBar = findViewById(R.id.progressBar6);
     }
 
 //    @Override

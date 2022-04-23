@@ -44,12 +44,7 @@ public class SignUpScreen extends AppCompatActivity {
         haveAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                haveAcc.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(SignUpScreen.this, SignInScreen.class));
-                    }
-                });
+                startActivity(new Intent(SignUpScreen.this, SignInScreen.class));
             }
         });
 
