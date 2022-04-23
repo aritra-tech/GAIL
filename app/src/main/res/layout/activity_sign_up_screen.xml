@@ -31,12 +31,12 @@
       app:layout_constraintStart_toStartOf="@+id/textView3"
       app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-    <!--androidx.camera.view.PreviewView
+    <androidx.camera.view.PreviewView
         android:id="@+id/previewView"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.camera.view.PreviewView-->
+    </androidx.camera.view.PreviewView>
 
   </FrameLayout>
 
