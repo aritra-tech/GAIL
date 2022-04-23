@@ -11,24 +11,25 @@
         android:theme="@style/Theme.GAIL">
         <activity
             android:name=".authentication.ForgotPassword"
-            android:exported="false" />
-        <activity
-            android:name=".authentication.SignUpFinal"
-            android:exported="false" />
-        <activity
-            android:name=".authentication.SignUpScreen"
-            android:exported="false" />
-        <activity
-            android:name=".authentication.SignInScreen"
             android:exported="true" />
         <activity
-            android:name=".HomeScreen"
+            android:name=".authentication.SignUpFinal"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.SignUpScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".authentication.SignInScreen"
+            android:exported="true" />
+        <activity
+            android:name=".HomeScreen"
+            android:exported="true">
         </activity>
 
         <meta-data
