@@ -135,7 +135,7 @@
             android:textColor="@color/desat_blue" />
 
         <TextView
-            android:id="@+id/noacc"
+            android:id="@+id/no_acc"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"

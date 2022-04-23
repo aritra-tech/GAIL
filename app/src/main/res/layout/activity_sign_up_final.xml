@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_margin="10dp"
     android:background="@color/white"
     tools:context=".authentication.SignUpFinal">
 
@@ -21,7 +20,7 @@
         android:layout_marginBottom="10dp"/>
 
     <EditText
-        android:id="@+id/eemail"
+        android:id="@+id/email"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/stroked"
@@ -38,7 +37,7 @@
         android:layout_margin="7dp"/>
 
     <EditText
-        android:id="@+id/ephone_no"
+        android:id="@+id/contact"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/stroked"
@@ -89,7 +88,7 @@
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/edesignation"
+        android:id="@+id/designation"
         android:layout_width="331dp"
         android:layout_height="111dp"
         android:layout_margin="7dp"
@@ -107,7 +106,7 @@
         tools:layout_editor_absoluteY="105dp" />
 
     <EditText
-        android:id="@+id/eoffice_add"
+        android:id="@+id/office_add"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/stroked"
@@ -124,7 +123,7 @@
         android:layout_margin="7dp"/>
 
     <EditText
-        android:id="@+id/epasword"
+        android:id="@+id/pass"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/stroked"
@@ -142,7 +141,7 @@
         android:layout_margin="7dp"/>
 
     <EditText
-        android:id="@+id/econfirm_password"
+        android:id="@+id/conf_pass"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:background="@drawable/stroked"
@@ -160,7 +159,7 @@
         android:layout_margin="7dp"/>
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/create"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
