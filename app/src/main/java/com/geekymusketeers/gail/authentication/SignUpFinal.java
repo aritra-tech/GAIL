@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -24,6 +25,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.ByteArrayOutputStream;
 
 public class SignUpFinal extends AppCompatActivity {
 
@@ -50,8 +53,8 @@ public class SignUpFinal extends AppCompatActivity {
         Intent intent = getIntent();
         String sName = intent.getStringExtra("NAME");
         String sID = intent.getStringExtra("ID");
-     //   byte[] byteArray = getIntent().getByteArrayExtra("userImage");
-       // Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        byte[] byteArray = getIntent().getByteArrayExtra("image");
+        Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -64,10 +67,11 @@ public class SignUpFinal extends AppCompatActivity {
                 String sDes = designation.getText().toString();
                 String sCon = contact.getText().toString();
                 String sOAdd = officeAdd.getText().toString();
+                String Base64 = BitMapToString(bmp);
 
                 validate(sEmail, sPass, sCPass, sDes, sOAdd);
 
-               // Toast.makeText(SignUpFinal.this, sEmail, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(SignUpFinal.this, Base64, Toast.LENGTH_SHORT).show();
 
                 mAuth.createUserWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
                         .addOnCompleteListener(SignUpFinal.this, new OnCompleteListener<AuthResult>() {
@@ -75,7 +79,7 @@ public class SignUpFinal extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
 
-                                    Users users = new Users(sName, sEmail, sID, sCon, "Male", sDes, sOAdd);
+                                    Users users = new Users(sName, sEmail, sID, sCon, "Male", sDes, sOAdd, Base64);
 
                                     FirebaseDatabase.getInstance().getReference("Users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -168,6 +172,25 @@ public class SignUpFinal extends AppCompatActivity {
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
 //        if(currentUser != null){
 //            reload();
+//        }
+//    }
+
+    public String BitMapToString(Bitmap bitmap){
+        ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+        byte [] b=baos.toByteArray();
+        String temp= Base64.encodeToString(b, Base64.DEFAULT);
+        return temp;
+    }
+
+//    public Bitmap StringToBitMap(String encodedString){
+//        try {
+//            byte [] encodeByte= Base64.decode(encodedString,Base64.DEFAULT);
+//            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+//            return bitmap;
+//        } catch(Exception e) {
+//            e.getMessage();
+//            return null;
 //        }
 //    }
 }

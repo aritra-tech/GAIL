@@ -23,23 +23,16 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <FrameLayout
-      android:id="@+id/container"
+  <ImageView
+      android:id="@+id/cam"
       android:layout_width="220dp"
       android:layout_height="220dp"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="16dp"
       app:layout_constraintEnd_toEndOf="@+id/textView3"
       app:layout_constraintStart_toStartOf="@+id/textView3"
       app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-    <!--androidx.camera.view.PreviewView
-        android:id="@+id/previewView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </androidx.camera.view.PreviewView-->
-
-  </FrameLayout>
+  </ImageView>
 
   <Button
       android:id="@+id/add_face"
@@ -51,10 +44,10 @@
       android:text="Add face"
       android:textAllCaps="false"
       android:textColor="@color/white"
-      app:layout_constraintEnd_toEndOf="@+id/container"
+      app:layout_constraintEnd_toEndOf="@+id/cam"
       app:layout_constraintHorizontal_bias="0.506"
-      app:layout_constraintStart_toStartOf="@+id/container"
-      app:layout_constraintTop_toBottomOf="@+id/container" />
+      app:layout_constraintStart_toStartOf="@+id/cam"
+      app:layout_constraintTop_toBottomOf="@+id/cam" />
 
   <LinearLayout
       android:id="@+id/linearLayout"
@@ -124,7 +117,7 @@
       app:layout_constraintVertical_bias="0.376">
 
     <TextView
-        android:id="@+id/haveacc"
+        android:id="@+id/have_acc"
         android:layout_width="51dp"
         android:layout_height="29dp"
         android:layout_alignParentTop="true"
