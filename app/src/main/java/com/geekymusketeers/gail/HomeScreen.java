@@ -39,7 +39,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        Initialization();
+        Initialization(); //To Initialize
         Fetch();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
