@@ -103,38 +103,25 @@
 
   </LinearLayout>
 
-  <RelativeLayout
-      android:layout_width="244dp"
-      android:layout_height="30dp"
-      android:layout_margin="10dp"
-      android:layout_marginBottom="26dp"
+  <LinearLayout
+      android:id="@+id/linearLayout3"
+      android:layout_width="wrap_content"
+      android:layout_height="38dp"
+      android:layout_marginTop="20dp"
       android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="10dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-      app:layout_constraintHorizontal_bias="0.36"
+      app:layout_constraintHorizontal_bias="0.493"
       app:layout_constraintStart_toStartOf="@+id/linearLayout"
       app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-      app:layout_constraintVertical_bias="0.376">
+      app:layout_constraintVertical_bias="0.204">
 
-    <TextView
-        android:id="@+id/have_acc"
-        android:layout_width="51dp"
-        android:layout_height="29dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:gravity="center"
-        android:text="Login"
-        android:textSize="16dp"
-        android:textColor="@color/desat_blue"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/mess"
-        android:layout_width="190dp"
+        android:layout_width="wrap_content"
         android:layout_height="29dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -147,6 +134,22 @@
         android:textColor="@color/desat_blue"
         android:textSize="16dp" />
 
-  </RelativeLayout>
+    <TextView
+        android:id="@+id/have_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="  Login"
+        android:textColor="@color/desat_blue"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

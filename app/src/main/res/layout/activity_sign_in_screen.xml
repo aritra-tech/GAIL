@@ -52,6 +52,7 @@
         android:hint="Password"
         android:drawableRight="@drawable/visibility_off"
         android:paddingRight="10dp"
+        android:drawableTint="@color/desat_blue"
         android:inputType="textPassword"
         android:paddingLeft="23dp"
         android:text=""
@@ -124,7 +125,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="256dp"
+        android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_margin="10dp"
         android:gravity="center"
@@ -138,7 +139,7 @@
 
         <TextView
             android:id="@+id/mess"
-            android:layout_width="175dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
             android:textSize="16dp"
@@ -147,10 +148,10 @@
 
         <TextView
             android:id="@+id/no_acc"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Create one"
+            android:text="  Create one"
             android:textSize="16dp"
             android:textColor="@color/desat_blue"
             android:textStyle="bold" />
