@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_forgot_password.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_in_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/buttons.xml" value="0.1855" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/negative.xml" value="0.1855" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/positive.xml" value="0.1855" />
@@ -21,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

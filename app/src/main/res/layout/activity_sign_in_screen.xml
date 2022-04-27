@@ -50,6 +50,8 @@
         android:background="@drawable/stroked"
         android:gravity="center_vertical"
         android:hint="Password"
+        android:drawableRight="@drawable/visibility_off"
+        android:paddingRight="10dp"
         android:inputType="textPassword"
         android:paddingLeft="23dp"
         android:text=""
