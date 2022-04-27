@@ -26,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class HomeScreen extends AppCompatActivity {
-
+//code starts here
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
