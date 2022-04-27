@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/white"
+    android:background="@drawable/bg_png_textured"
     tools:context=".authentication.SignUpFinal">
 
     <TextView
