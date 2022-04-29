@@ -11,10 +11,13 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.geekymusketeers.gail.authentication.SignInScreen;
 import com.geekymusketeers.gail.authentication.SignUpFinal;
 import com.geekymusketeers.gail.authentication.SignUpScreen;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,15 +29,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class HomeScreen extends AppCompatActivity {
-    //code starts here
+
+//    code starts here
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
-    ImageView img;
-    Button btn;
-    TextView text;
+    ImageView clockInOut;
+    Button Logout;
+    TextView DateDis;
+    TextClock clock;
+    Calendar calendar;
+    SimpleDateFormat dateFormat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,35 +50,31 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
 //        getSupportActionBar().hide();
 
-        Thread t = new Thread(){
-            @Override
-            public void run(){
-                try
+        Initialization();
 
-                {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                TextView tdate = (TextView) findViewById(R.id.date);
-                                TextView tdate1 = (TextView) findViewById(R.id.date1);
-                                long date = System.currentTimeMillis();
-                                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
-                                SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
-                                String dateString = sdf.format(date);
-                                String dateString1 = sdf1.format(date);
-                                tdate.setText(dateString);
-                                tdate1.setText(dateString1);
-                            }
-                        });
-                    }
-                }catch (InterruptedException e){
-                }
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent i = new Intent(HomeScreen.this, SignInScreen.class);
+                startActivity(i);
+                finish();
             }
-        };
-        t.start();
-//        Initialization();
+        });
+
+        clockInOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeScreen.this, clock.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        calendar = Calendar.getInstance();
+        dateFormat = new SimpleDateFormat("EEEE, MMM d");
+        String date = dateFormat.format(calendar.getTime());
+        DateDis.setText(date);
+
+
 //        Fetch();
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -90,18 +94,18 @@ public class HomeScreen extends AppCompatActivity {
 //                });
 //            }
 //        });
-//    }
-//
-//    private void Initialization() {
-//        //Firebase authentication
-//        //Firebase get username
-//        user = FirebaseAuth.getInstance().getCurrentUser();
-//        reference = FirebaseDatabase.getInstance().getReference("Users");
-//        userID = user.getUid();
-//        img = findViewById(R.id.imageView);
-//        btn = findViewById(R.id.button);
-//        text = findViewById(R.id.textView5);
-//    }
+    }
+
+    private void Initialization() {
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+        Logout = findViewById(R.id.logout);
+        DateDis = findViewById(R.id.text_view_date);
+        clock = findViewById(R.id.textClock);
+        clockInOut = findViewById(R.id.clock_inout);
+    }
+
 //    private void Fetch() {
 //        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
@@ -110,13 +114,11 @@ public class HomeScreen extends AppCompatActivity {
 //                Intent i = new Intent(HomeScreen.this, HomeScreen.class);
 //                if (userprofile != null){
 //                    String fullname = userprofile.name;
-//                    text.setText(fullname);
 //                    String base64 = userprofile.base64;
 //                    i.putExtra("imagefetch",base64);
 //                    String contact = userprofile.contact;
 //                    Toast.makeText(getApplicationContext(), "Welcome "+fullname, Toast.LENGTH_SHORT).show();
 //                }
-////                Toast.makeText(getApplicationContext(), "Welcome"+fullname, Toast.LENGTH_SHORT).show();
 //            }
 //
 //            @Override
@@ -125,15 +127,16 @@ public class HomeScreen extends AppCompatActivity {
 //            }
 //        });
 //    }
-//    public Bitmap StringToBitMap(String encodedString){
+
+//    public Bitmap StringToBitMap(String encodedString) {
 //        try {
-//            byte [] encodeByte= Base64.decode(encodedString,Base64.DEFAULT);
-//            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+//            byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
+//            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
 //            return bitmap;
-//        } catch(Exception e) {
+//        } catch (Exception e) {
 //            e.getMessage();
 //            return null;
 //        }
+//    }
 
-    }
 }
