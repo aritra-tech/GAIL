@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+
 public class HomeScreen extends AppCompatActivity {
 //code starts here
     private FirebaseUser user;
@@ -38,70 +40,100 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        getSupportActionBar().hide();
 
-        Initialization();
-        Fetch();
-        btn.setOnClickListener(new View.OnClickListener() {
+        Thread t = new Thread(){
             @Override
-            public void onClick(View view) {
-                reference.child(userID).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String st = snapshot.child("base64").getValue().toString();
-                        Bitmap temp = StringToBitMap(st);
-                        img.setImageBitmap(StringToBitMap(st));
+            public void run(){
+                try
+
+                {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView tdate = (TextView) findViewById(R.id.date);
+                                TextView tdate1 = (TextView) findViewById(R.id.date1);
+                                long date = System.currentTimeMillis();
+                                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm a");
+                                SimpleDateFormat sdf1 = new SimpleDateFormat("dd-M-yyyy");
+                                String dateString = sdf.format(date);
+                                String dateString1 = sdf1.format(date);
+                                tdate.setText(dateString);
+                                tdate1.setText(dateString1);
+                            }
+                        });
                     }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-            }
-        });
-    }
-
-    private void Initialization() {
-        //Firebase authentication
-        //Firebase get username
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userID = user.getUid();
-        img = findViewById(R.id.imageView);
-        btn = findViewById(R.id.button);
-        text = findViewById(R.id.textView5);
-    }
-    private void Fetch() {
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Users userprofile = snapshot.getValue(Users.class);
-                Intent i = new Intent(HomeScreen.this, HomeScreen.class);
-                if (userprofile != null){
-                    String fullname = userprofile.name;
-                    text.setText(fullname);
-                    String base64 = userprofile.base64;
-                    i.putExtra("imagefetch",base64);
-                    String contact = userprofile.contact;
-                    Toast.makeText(getApplicationContext(), "Welcome "+fullname, Toast.LENGTH_SHORT).show();
+                }catch (InterruptedException e){
                 }
-//                Toast.makeText(getApplicationContext(), "Welcome"+fullname, Toast.LENGTH_SHORT).show();
             }
+        };
+        t.start();
+//        Initialization();
+//        Fetch();
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                reference.child(userID).addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        String st = snapshot.child("base64").getValue().toString();
+//                        Bitmap temp = StringToBitMap(st);
+//                        img.setImageBitmap(StringToBitMap(st));
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+//            }
+//        });
+//    }
+//
+//    private void Initialization() {
+//        //Firebase authentication
+//        //Firebase get username
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        reference = FirebaseDatabase.getInstance().getReference("Users");
+//        userID = user.getUid();
+//        img = findViewById(R.id.imageView);
+//        btn = findViewById(R.id.button);
+//        text = findViewById(R.id.textView5);
+//    }
+//    private void Fetch() {
+//        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                Users userprofile = snapshot.getValue(Users.class);
+//                Intent i = new Intent(HomeScreen.this, HomeScreen.class);
+//                if (userprofile != null){
+//                    String fullname = userprofile.name;
+//                    text.setText(fullname);
+//                    String base64 = userprofile.base64;
+//                    i.putExtra("imagefetch",base64);
+//                    String contact = userprofile.contact;
+//                    Toast.makeText(getApplicationContext(), "Welcome "+fullname, Toast.LENGTH_SHORT).show();
+//                }
+////                Toast.makeText(getApplicationContext(), "Welcome"+fullname, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(getApplicationContext(), "Fail", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//    public Bitmap StringToBitMap(String encodedString){
+//        try {
+//            byte [] encodeByte= Base64.decode(encodedString,Base64.DEFAULT);
+//            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+//            return bitmap;
+//        } catch(Exception e) {
+//            e.getMessage();
+//            return null;
+//        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(), "Fail", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-    public Bitmap StringToBitMap(String encodedString){
-        try {
-            byte [] encodeByte= Base64.decode(encodedString,Base64.DEFAULT);
-            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            return bitmap;
-        } catch(Exception e) {
-            e.getMessage();
-            return null;
-        }
     }
 }

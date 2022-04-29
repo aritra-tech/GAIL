@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.geekymusketeers.gail">
 
-    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
-    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GAIL">
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Result_view"
+            android:exported="false" />
+        <activity
+            android:name=".Attendance_scan"
+            android:exported="false" />
         <activity
             android:name=".authentication.ForgotPassword"
             android:exported="true" />
@@ -34,8 +42,7 @@
             android:exported="true" />
         <activity
             android:name=".HomeScreen"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
