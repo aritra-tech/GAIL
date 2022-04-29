@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android projects/GAIL/app/src/main/res/drawable/cardview.xml" value="0.1605" />
+        <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.2" />
+        <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_profile_view.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.27447916666666666" />
