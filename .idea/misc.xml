@@ -7,8 +7,10 @@
         <entry key="..\:/Android projects/GAIL/app/src/main/res/drawable/negative.xml" value="0.1605" />
         <entry key="..\:/Android projects/GAIL/app/src/main/res/drawable/negative_home.xml" value="0.1605" />
         <entry key="..\:/Android projects/GAIL/app/src/main/res/drawable/positive.xml" value="0.1605" />
+        <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_attendance_scan.xml" value="0.2" />
         <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.2" />
         <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_profile_view.xml" value="0.2" />
+        <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_reading_facial_data.xml" value="0.2" />
         <entry key="..\:/Android projects/GAIL/app/src/main/res/layout/activity_result_view.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.27447916666666666" />

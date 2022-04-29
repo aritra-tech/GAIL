@@ -14,11 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GAIL">
         <activity
+            android:name=".Attendance_Scan"
+            android:exported="true" />
+        <activity
             android:name=".Result_view"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Profile_view"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".authentication.ForgotPassword"
             android:exported="true" />
@@ -28,13 +31,6 @@
         <activity
             android:name=".authentication.SignUpScreen"
             android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".authentication.SignInScreen"
