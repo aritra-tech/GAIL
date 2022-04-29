@@ -16,9 +16,12 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.geekymusketeers.gail.R;
@@ -32,13 +35,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.ByteArrayOutputStream;
 
-public class SignUpFinal extends AppCompatActivity {
+public class SignUpFinal extends AppCompatActivity{
 
     private FirebaseAuth mAuth;
     private Button create;
     EditText email, pass, confPass, designation, officeAdd, contact;
     ProgressBar progressBar;
     boolean passwordVisible;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +113,11 @@ public class SignUpFinal extends AppCompatActivity {
         String sID = intent.getStringExtra("ID");
         byte[] byteArray = getIntent().getByteArrayExtra("image");
         Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+        // Drop Down Added
+        String[] items = new String[]{"Male","Female","Others"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,items);
+        spinner.setAdapter(adapter);
 
 
         create.setOnClickListener(new View.OnClickListener() {
@@ -221,6 +230,7 @@ public class SignUpFinal extends AppCompatActivity {
         officeAdd = findViewById(R.id.office_add);
         contact = findViewById(R.id.contact);
         progressBar = findViewById(R.id.progressBar6);
+        spinner = findViewById(R.id.gender_spin);
     }
 
 //    @Override
@@ -240,6 +250,8 @@ public class SignUpFinal extends AppCompatActivity {
         String temp= Base64.encodeToString(b, Base64.DEFAULT);
         return temp;
     }
+
+
 
 //    public Bitmap StringToBitMap(String encodedString){
 //        try {
