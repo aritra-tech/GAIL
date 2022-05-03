@@ -114,6 +114,7 @@ public class SignUpScreen extends AppCompatActivity {
             public void onClick(View view) {
                 validate();
                 Bitmap bm=((BitmapDrawable)imageView.getDrawable()).getBitmap();
+//                if (imageView.isE)
                 Intent intent = new Intent(SignUpScreen.this, SignUpFinal.class);
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bm.compress(Bitmap.CompressFormat.PNG, 100, stream);
