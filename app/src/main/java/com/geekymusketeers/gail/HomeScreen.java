@@ -66,6 +66,7 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(HomeScreen.this, clock.getText().toString(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
 

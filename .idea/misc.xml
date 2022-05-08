@@ -24,20 +24,30 @@
         <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/aritr/AndroidStudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/buttons.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/indicator_default.xml" value="0.1825" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/indicator_selected.xml" value="0.1825" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/indicator_selector.xml" value="0.1825" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/negative.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/negative_home.xml" value="0.1825" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/next_btn.xml" value="0.1825" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/positive.xml" value="0.1855" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/round_bg.xml" value="0.1825" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/stroked.xml" value="0.1855" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/visibility.xml" value="0.2075" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/drawable/visibility_off.xml" value="0.2075" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_home_screen.xml" value="0.25" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_profile_view.xml" value="0.2" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_sign_in_screen.xml" value="0.2" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_final.xml" value="0.2" />
         <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_sign_up_screen.xml" value="0.25" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Users/vinay/StudioProjects/GAIL/app/src/main/res/layout/layout_screen.xml" value="0.2" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
